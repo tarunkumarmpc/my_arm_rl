@@ -1,0 +1,24 @@
+arm_rl:
+  action_space:
+    low: [-1.57, -1.57, -1.57, -1.57, -1.57, -1.57]
+    high: [1.57, 1.57, 1.57, 1.57, 1.57, 1.57]
+  observation_space:
+    low: [-1.57, -1.57, -1.57, -1.57, -1.57, -1.57, -5.0, -5.0, -5.0, -5.0, -5.0, -5.0]
+    high: [1.57, 1.57, 1.57, 1.57, 1.57, 1.57, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+  action_server_topic: "/arm_controller/follow_joint_trajectory"
+  joint_state_topic: "/joint_states"
+  joint_names:
+    - "link1_to_link2"
+    - "link2_to_link3"
+    - "link3_to_link4"
+    - "link4_to_link5"
+    - "link5_to_link6"
+    - "link6_to_link6_flange"
+  default_target: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  action_server_timeout: 10.0
+  reset_timeout: 5.0
+  step_timeout: 5.0
+  collision_threshold: 0.05
+  target_space:
+    low: [-1.57, -1.57, -1.57, -1.57, -1.57, -1.57]
+    high: [1.57, 1.57, 1.57, 1.57, 1.57, 1.57]
